@@ -10,8 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>NaimixCodeHackathon</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>NaimixCodeHackathon</name>
 	<description>NaimixCode hackathon backend</description>
 	<url/>
@@ -45,6 +44,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
