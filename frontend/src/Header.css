@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 60px;
   padding: 20px;
-  background-color: #0e6666;
+  background-color: #F25430;
   color: white;
 }
 
@@ -16,7 +16,7 @@ img {
 nav button {
   margin-left: 20px;
   padding: 10px 20px;
-  background-color: #0b4d4d;
+  background-color: #ff9929;
   color: white;
   border: none;
   border-radius: 5px;

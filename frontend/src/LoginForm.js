@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm({ onLoginSuccess }) {
+  const navigate = useNavigate();
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
+  
+  
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-
     if (!username || !password) {
       setMessage({ type: 'error', text: 'Введите логин и пароль.' });
       return;
@@ -19,7 +23,7 @@ export default function LoginForm({ onLoginSuccess }) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username: username, password: password }),
     })
       .then((response) => {
         if (response.ok) {
@@ -34,6 +38,7 @@ export default function LoginForm({ onLoginSuccess }) {
         localStorage.setItem('token', token);
         onLoginSuccess(token);
         setMessage({ type: 'success', text: 'Вы успешно вошли!' });
+		navigate('/compatibility');
       })
       .catch((error) => {
         console.error(error);

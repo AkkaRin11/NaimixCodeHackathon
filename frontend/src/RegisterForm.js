@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './RegisterForm.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function RegistrationForm() {
+  const navigate = useNavigate();
   // hooks for states
   const [lastName, setLastName] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -11,6 +13,8 @@ export default function RegistrationForm() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState(null); 
   const [isVisible, setIsVisible] = useState(false);
+  
+  
 
   // regex for names validating
   const nameRegex = /^[А-Яа-яЁё]{2,}$/;
@@ -59,6 +63,7 @@ export default function RegistrationForm() {
 			console.log("Got token");
 			setMessage({ type: 'success', text: 'Регистрация прошла успешно!' });
 			localStorage.setItem('token', token);
+			navigate('/compatibility');
         })
             .catch(error => {
             console.error(error);
