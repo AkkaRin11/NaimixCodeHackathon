@@ -11,7 +11,7 @@
     text-align: center;
 	margin-top: 0px;
     margin: 20px;
-	font-size: 65px;
+	font-size: 55px;
 }
 
 .registration-form div {
@@ -21,7 +21,7 @@
 .registration-form label {
     display: block;
     font-weight: bold;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 .registration-form input {
@@ -30,7 +30,7 @@
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-	font-size: 25px;
+	font-size: 15px;
 }
 
 .registration-form button {

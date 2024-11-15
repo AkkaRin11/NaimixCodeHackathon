@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Header from './Header';
-import Compatibility from './Compatibility'; // Путь должен быть правильным
+import Compatibility from './Compatibility'; 
 import PrivateRoute from './PrivateRoute';
 import Profile from './Profile';
 import Personalities from './Personalities';

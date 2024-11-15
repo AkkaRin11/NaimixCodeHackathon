@@ -1,11 +1,10 @@
 
-
 .main {
-  display: flex; /* Установить режим флексбокса */
-  justify-content: center; /* Центровка по горизонтали */
-  height: 100vh; /* Устанавливаем высоту 100% экрана */
-  width: 100%; /* Устанавливаем ширину 100% */
-  background-color: #f9f9f9; /* Фоновый цвет */
+  display: flex; 
+  justify-content: center; 
+  height: 100vh; 
+  width: 100%; 
+  background-color: #f9f9f9; 
 }
 
 .App{

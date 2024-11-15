@@ -1,0 +1,46 @@
+
+.compatibility-container {
+  display: flex;
+  padding: 20px;
+}
+
+.compatibility-results {
+  flex: 2;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.compatibility-results h1 {
+  margin-bottom: 10px;
+}
+
+
+.compatibility-forms {
+  flex: 1;
+  padding: 20px;
+}
+
+.compatibility-forms h2 {
+  margin-bottom: 20px;
+}
+
+.compatibility-forms h3 {
+  margin-top: 20px;
+}
+
+.compatibility-forms label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.compatibility-forms input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
