@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="0002-create-uuid-extension" author="your_name">
+        <sql>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+        </sql>
+    </changeSet>
+
+    <changeSet id="2024-11-16--0002-user_data" author="AkkaRin">
+        <preConditions>
+            <not>
+                <tableExists tableName="user_data"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="user_data">
+
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="login"
+                    type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="password"
+                    type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addDefaultValue tableName="user_data" columnName="id" defaultValueComputed="uuid_generate_v4()"/>
+
+        <addForeignKeyConstraint
+                baseTableName="user_data"
+                baseColumnNames="user_id"
+                referencedTableName="user"
+                referencedColumnNames="id"
+                constraintName="fk_main_to_dependent"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"/>
+    </changeSet>
+
+</databaseChangeLog>
