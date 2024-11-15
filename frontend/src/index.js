@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import Header from './Header';
 import Compatibility from './Compatibility'; // Путь должен быть правильным
-
+import PrivateRoute from './PrivateRoute';
 import Profile from './Profile';
 import Personalities from './Personalities';
 
@@ -17,9 +17,18 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/compatibility" element={<Compatibility />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/personalities" element={<Personalities />} />
+        <Route path="/compatibility" element={
+          <PrivateRoute>
+            <Compatibility />
+		</PrivateRoute>}/>
+        <Route path="/profile" element={
+          <PrivateRoute>
+            <Profile />
+		</PrivateRoute>}/>
+        <Route path="/personalities" element={
+          <PrivateRoute>
+            <Personalities />
+		</PrivateRoute>}/>
       </Routes>
     </Router>
   </React.StrictMode>

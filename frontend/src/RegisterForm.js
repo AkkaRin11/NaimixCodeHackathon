@@ -32,7 +32,6 @@ export default function RegistrationForm() {
       return;
     }
 
-    
     // server logic
 		let url = 'http://tikvenniesemechki.ru/api/v1/register'
 		fetch(url, {
@@ -56,10 +55,10 @@ export default function RegistrationForm() {
             }
         })
             .then(data => {
-            //const token = data.token;
+            const token = data.token;
 			console.log("Got token");
 			setMessage({ type: 'success', text: 'Регистрация прошла успешно!' });
-			//localStorage.setItem('token', token);
+			localStorage.setItem('token', token);
         })
             .catch(error => {
             console.error(error);
