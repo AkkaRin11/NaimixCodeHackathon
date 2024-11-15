@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import Welcome from './Welcome';
 
-function App() {
+export default function App() {
+  const [isVisible, setIsVisible] = useState(true);
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsVisible(false); 
+    } else {
+      navigate('/'); 
+    }
+  }, [navigate]); 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isVisible ? <Welcome onAuthSuccess={() => setIsVisible(false)} /> : <h1>4g чипсы</h1>}
     </div>
   );
 }
-
-export default App;

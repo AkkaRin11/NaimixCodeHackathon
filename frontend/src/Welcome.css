@@ -1,0 +1,36 @@
+.welcome-page {
+  text-align: center;
+  justify-content: center;
+  padding: 0px;
+  background-color: #f9f9f9;
+  min-height: 100vh; /* Для полного заполнения экрана */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование по горизонтали */
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-container {
+  width: 800px; /* Увеличиваем ширину формы */
+  min-height: 400px; /* Увеличиваем высоту формы */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  margin: 20px;
+}
+.form-container > button {
+	width: 20%;
+	height: 4%;
+    padding: 10px;
+	margin: 10px;
+    font-size: 12px;
+	font-family: 'Mont Blanc', sans-serif;
+}
