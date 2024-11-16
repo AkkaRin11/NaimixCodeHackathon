@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LoginForm.css';
+import '../StyleSheets/LoginForm.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm({ onLoginSuccess }) {

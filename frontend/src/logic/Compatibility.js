@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Compatibility.css';
+import '../StyleSheets/Compatibility.css';
 
 export default function Compatibility() {
   const [departments, setDepartments] = useState([]);
