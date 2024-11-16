@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="0001-create-uuid-extension" author="your_name">
+        <sql>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+        </sql>
+    </changeSet>
+
+    <changeSet id="2024-11-16--0001-user" author="AkkaRin">
+        <preConditions>
+            <not>
+                <tableExists tableName="user"/>
+            </not>
+        </preConditions>
+
+
+        <createTable tableName="user">
+
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="first_name"
+                    type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="last_name"
+                    type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="middle_name"
+                    type="VARCHAR(150)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <!-- тут ещё нужно подумать над тем как привязать юзера к таблице -->
+
+        <addDefaultValue tableName="user" columnName="id" defaultValueComputed="uuid_generate_v4()"/>
+    </changeSet>
+
+</databaseChangeLog>
