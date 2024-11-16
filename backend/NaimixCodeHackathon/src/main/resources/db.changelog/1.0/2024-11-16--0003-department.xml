@@ -22,17 +22,6 @@
             </not>
         </preConditions>
 
-<!--        <preConditions>-->
-<!--            <or>-->
-<!--                <not>-->
-<!--                    <tableExists tableName="department"/>-->
-<!--                </not>-->
-<!--                <not>-->
-<!--                    <foreignKeyConstraintExists foreignKeyName="fk_main_to_department" />-->
-<!--                </not>-->
-<!--            </or>-->
-<!--        </preConditions>-->
-
         <createTable tableName="department">
 
             <column name="id" type="UUID">

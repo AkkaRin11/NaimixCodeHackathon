@@ -21,16 +21,6 @@
                 <tableExists tableName="user_data"/>
             </not>
         </preConditions>
-<!--        <preConditions>-->
-<!--            <or>-->
-<!--                <not>-->
-<!--                    <tableExists tableName="user_data"/>-->
-<!--                </not>-->
-<!--                <not>-->
-<!--                    <foreignKeyConstraintExists foreignKeyName="fk_main_to_user_data" />-->
-<!--                </not>-->
-<!--            </or>-->
-<!--        </preConditions>-->
 
         <createTable tableName="user_data">
 

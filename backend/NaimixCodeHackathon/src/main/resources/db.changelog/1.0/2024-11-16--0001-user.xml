@@ -7,9 +7,6 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="0001-create-uuid-extension" author="AkkaRin">
-<!--        <sql>-->
-<!--            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";-->
-<!--        </sql>-->
         <sql>
             CREATE ALIAS IF NOT EXISTS uuid_generate_v4 FOR "java.util.UUID.randomUUID";
         </sql>
