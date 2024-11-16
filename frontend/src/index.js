@@ -26,8 +26,9 @@ root.render(
             <Profile />
 		</PrivateRoute>}/>
         <Route path="/personalities" element={
-          
+          <PrivateRoute>
             <Personalities />
+          </PrivateRoute>
 		}/>
       </Routes>
     </Router>
