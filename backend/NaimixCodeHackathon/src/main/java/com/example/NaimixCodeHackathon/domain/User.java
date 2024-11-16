@@ -10,7 +10,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "\"user\"")
+@Table(name = "my_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

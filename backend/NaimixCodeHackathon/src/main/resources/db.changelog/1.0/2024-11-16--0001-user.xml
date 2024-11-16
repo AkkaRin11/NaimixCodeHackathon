@@ -6,21 +6,25 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="0001-create-uuid-extension" author="your_name">
+    <changeSet id="0001-create-uuid-extension" author="AkkaRin">
+<!--        <sql>-->
+<!--            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";-->
+<!--        </sql>-->
         <sql>
-            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+            CREATE ALIAS IF NOT EXISTS uuid_generate_v4 FOR "java.util.UUID.randomUUID";
         </sql>
     </changeSet>
 
     <changeSet id="2024-11-16--0001-user" author="AkkaRin">
+
         <preConditions>
             <not>
-                <tableExists tableName="user"/>
+                <tableExists tableName="my_user"/>
             </not>
         </preConditions>
 
 
-        <createTable tableName="user">
+        <createTable tableName="my_user">
 
             <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
@@ -43,7 +47,7 @@
         </createTable>
         <!-- тут ещё нужно подумать над тем как привязать юзера к таблице -->
 
-        <addDefaultValue tableName="user" columnName="id" defaultValueComputed="uuid_generate_v4()"/>
+        <addDefaultValue tableName="my_user" columnName="id" defaultValueComputed="uuid_generate_v4()"/>
     </changeSet>
 
 </databaseChangeLog>

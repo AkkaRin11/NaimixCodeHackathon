@@ -6,9 +6,12 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="0002-create-uuid-extension" author="your_name">
+    <changeSet id="0002-create-uuid-extension" author="AkkaRin">
+<!--        <sql>-->
+<!--            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";-->
+<!--        </sql>-->
         <sql>
-            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+            CREATE ALIAS IF NOT EXISTS uuid_generate_v4 FOR "java.util.UUID.randomUUID";
         </sql>
     </changeSet>
 
@@ -18,6 +21,16 @@
                 <tableExists tableName="user_data"/>
             </not>
         </preConditions>
+<!--        <preConditions>-->
+<!--            <or>-->
+<!--                <not>-->
+<!--                    <tableExists tableName="user_data"/>-->
+<!--                </not>-->
+<!--                <not>-->
+<!--                    <foreignKeyConstraintExists foreignKeyName="fk_main_to_user_data" />-->
+<!--                </not>-->
+<!--            </or>-->
+<!--        </preConditions>-->
 
         <createTable tableName="user_data">
 
@@ -46,9 +59,9 @@
         <addForeignKeyConstraint
                 baseTableName="user_data"
                 baseColumnNames="user_id"
-                referencedTableName="user"
+                referencedTableName="my_user"
                 referencedColumnNames="id"
-                constraintName="fk_main_to_dependent"
+                constraintName="fk_main_to_user_data"
                 onDelete="CASCADE"
                 onUpdate="CASCADE"/>
     </changeSet>
