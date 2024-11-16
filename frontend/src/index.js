@@ -28,7 +28,8 @@ root.render(
         <Route path="/personalities" element={
           <PrivateRoute>
             <Personalities />
-		</PrivateRoute>}/>
+          </PrivateRoute>
+		}/>
       </Routes>
     </Router>
   </React.StrictMode>
