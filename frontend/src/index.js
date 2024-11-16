@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import Header from './Header';
-import Compatibility from './Compatibility'; 
-import PrivateRoute from './PrivateRoute';
-import Profile from './Profile';
-import Personalities from './Personalities';
+import './StyleSheets/index.css';
+import App from './logic/App';
+import Header from './logic/Header';
+import Compatibility from './logic/Compatibility'; 
+import PrivateRoute from './logic/PrivateRoute';
+import Profile from './logic/Profile';
+import Personalities from './logic/Personalities';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

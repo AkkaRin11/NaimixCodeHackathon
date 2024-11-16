@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoginForm from './LoginForm'; 
 import RegisterForm from './RegisterForm'; 
 import { useNavigate } from 'react-router-dom'; 
-import './Welcome.css'; 
+import '../StyleSheets/Welcome.css'; 
 
 export default function Welcome({ onAuthSuccess }) {
   const [isLogin, setIsLogin] = useState(true);

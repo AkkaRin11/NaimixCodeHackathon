@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RegisterForm.css';
+import '../StyleSheets/RegisterForm.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function RegistrationForm() {
